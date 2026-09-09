@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basket · CampusSwap</title>
+  <link rel="stylesheet" href="/css/styles.css?v=12" />
+</head>
+<body>
+  <main class="shell narrow-shell">
+    <header class="compact-heading">
+      <span class="eyebrow">Your basket</span>
+      <h1>Active swaps.</h1>
+      <p class="muted">Chat with sellers and confirm items after collection.</p>
+    </header>
+    <section class="request-list" id="requests" aria-live="polite"></section>
+  </main>
+  <div id="confirmDialog" class="dialog-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+    <div class="dialog-card">
+      <span class="dialog-icon">✓</span>
+      <h2 id="dialogTitle">Mark this item collected?</h2>
+      <p class="muted">This will complete the swap and move it to History.</p>
+      <div class="actions"><button id="cancelCollected" class="secondary">Not yet</button><button id="confirmCollected" class="primary">Yes, collected</button></div>
+    </div>
+  </div>
+  <script src="/js/app.js?v=13.1"></script>
+  <script src="/js/requests.js?v=12"></script>
+</body>
+</html>

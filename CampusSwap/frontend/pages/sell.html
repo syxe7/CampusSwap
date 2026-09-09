@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Post an item · CampusSwap</title>
+  <link rel="stylesheet" href="/css/styles.css?v=10" />
+</head>
+<body>
+  <main class="shell form-shell">
+    <a id="cancelListing" class="back-link" href="/marketplace">← Cancel</a>
+    <header class="compact-heading">
+      <span class="eyebrow">New listing</span>
+      <h1>Give it a second life.</h1>
+      <p class="muted">Three quick steps. You can preview everything before publishing.</p>
+    </header>
+
+    <aside id="postingTimer" class="posting-timer" role="timer" aria-live="polite">
+      <div><span aria-hidden="true">◷</span><div><b>Posting time</b><small>Complete your listing before time runs out</small></div></div>
+      <strong id="timerDisplay">02:00</strong>
+    </aside>
+
+    <div class="steps" aria-label="Listing progress">
+      <div><b class="active">1</b><span>Details</span></div><i></i>
+      <div><b>2</b><span>Price</span></div><i></i>
+      <div><b>3</b><span>Review</span></div>
+    </div>
+
+    <form id="sellForm" class="form listing-form" novalidate>
+      <section id="step1" class="step-card">
+        <label>Item title<input name="title" required maxlength="70" placeholder="e.g. Casio scientific calculator" /></label>
+        <label>Category
+          <select name="category">
+            <option>Books</option>
+            <option>Lab Equipment</option>
+            <option>Tech</option>
+            <option>Home</option>
+            <option>Fashion</option>
+            <option>Sports</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <div id="uploadBox" class="upload-box">
+          <input
+            id="photoInput"
+            class="photo-input-overlay"
+            name="photo"
+            type="file"
+            accept="image/png,image/jpeg,image/webp"
+            aria-label="Choose up to three item photos"
+            multiple
+          />
+          <div id="choosePhoto" class="upload-prompt" aria-hidden="true">
+            <b>＋ Add photos</b>
+            <small>Choose up to 3 JPG, PNG, or WebP images · maximum 2 MB each</small>
+          </div>
+        </div>
+        <p id="photoStatus" class="upload-status" aria-live="polite">0 of 3 photos selected · optional</p>
+        <div id="photoGallery" class="upload-gallery" aria-live="polite"></div>
+      </section>
+
+      <section id="step2" class="step-card hidden">
+        <div class="two-fields">
+          <label>Price (RM)<input name="price" type="number" min="0" required placeholder="0 for free" /></label>
+          <label>Condition<select name="condition"><option>Like new</option><option>Good</option><option>Fair</option></select></label>
+        </div>
+        <label>Description<textarea name="description" required maxlength="400" placeholder="What should the next owner know?"></textarea></label>
+      </section>
+
+      <section id="step3" class="step-card hidden">
+        <div class="review-heading">
+          <span class="eyebrow">Ready to post?</span>
+          <h2>Review your listing</h2>
+          <p class="muted">Make sure the details are correct before publishing.</p>
+        </div>
+        <div id="listingPreview" class="listing-preview"></div>
+        <p class="meetup-note">💬 Buyer and seller can arrange a safe campus meetup location through Chat.</p>
+        <p class="safety-note">Only your display name appears publicly. Always meet in a busy campus area.</p>
+      </section>
+
+      <div class="form-actions">
+        <button type="button" id="backButton" class="secondary hidden">Back</button>
+        <button id="nextButton" class="primary" type="button">Continue</button>
+      </div>
+    </form>
+  </main>
+
+  <div id="timerExpiredDialog" class="dialog-backdrop hidden">
+    <section class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="timerExpiredTitle">
+      <div class="dialog-icon">◷</div>
+      <h2 id="timerExpiredTitle">Posting time ended</h2>
+      <p class="muted">Your two minutes are up. Start again for a fresh timer or return to the marketplace.</p>
+      <div class="actions">
+        <a id="expiredMarketplace" class="secondary" href="/marketplace">Marketplace</a>
+        <button id="restartTimer" class="primary" type="button">Start again</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="/js/app.js?v=10"></script>
+  <script>CampusSwap.pageShell("");</script>
+  <script src="/js/sell.js?v=10"></script>
+</body>
+</html>

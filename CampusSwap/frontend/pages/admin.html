@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin dashboard · CampusSwap</title>
+  <link rel="stylesheet" href="/css/styles.css?v=18.1" />
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="/admin"><img src="/assets/campusswap-logo.png" alt="" /><span>CampusSwap<small>ADMIN CONSOLE</small></span></a>
+      <nav class="admin-navigation" aria-label="Admin navigation">
+        <button class="active" type="button" data-admin-view="overview"><span>⌂</span>Overview</button>
+        <button type="button" data-admin-view="reports"><span>⚑</span>Reports <b id="sidebarReportCount" class="admin-count hidden">0</b></button>
+        <button type="button" data-admin-view="listings"><span>▦</span>Listings</button>
+        <button type="button" data-admin-view="students"><span>◎</span>Students</button>
+      </nav>
+      <div class="admin-sidebar-footer"><div class="admin-user"><span>CA</span><div><b>Campus Admin</b><small>System moderator</small></div></div><button id="adminLogout" type="button">Log out</button></div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header"><div><span class="eyebrow">CampusSwap moderation</span><h1 id="adminPageTitle">Dashboard overview</h1><p id="adminPageDescription">Monitor marketplace activity and keep the student community safe.</p></div><button id="refreshAdmin" class="secondary" type="button">↻ Refresh</button></header>
+
+      <section id="adminOverview" class="admin-view">
+        <div class="admin-stat-grid">
+          <article><span class="admin-stat-icon warning">⚑</span><div><small>Pending reports</small><strong id="adminPendingReports">0</strong></div></article>
+          <article><span class="admin-stat-icon">▦</span><div><small>Active listings</small><strong id="adminActiveListings">0</strong></div></article>
+          <article><span class="admin-stat-icon">◎</span><div><small>Active students</small><strong id="adminActiveStudents">0</strong></div></article>
+          <article><span class="admin-stat-icon">✓</span><div><small>Completed swaps</small><strong id="adminCompletedSwaps">0</strong></div></article>
+        </div>
+        <section class="admin-panel"><div class="admin-panel-heading"><div><span class="eyebrow">Needs attention</span><h2>Latest reports</h2></div><button class="text-button" type="button" data-go-view="reports">View all reports →</button></div><div id="overviewReports" class="admin-compact-list"></div></section>
+      </section>
+
+      <section id="adminReports" class="admin-view hidden"><div class="admin-toolbar"><input id="reportSearch" type="search" placeholder="Search reports or listings…" /><select id="reportStatus"><option>All statuses</option><option>Pending</option><option>Dismissed</option><option>Removed</option></select></div><div id="reports" class="admin-list"></div></section>
+      <section id="adminListings" class="admin-view hidden"><div class="admin-toolbar"><input id="listingSearch" type="search" placeholder="Search listings or sellers…" /><select id="listingStatus"><option>All statuses</option><option>Available</option><option>Reserved</option><option>Sold</option><option>Removed</option></select></div><div id="adminListingTable" class="admin-table-wrap"></div></section>
+      <section id="adminStudents" class="admin-view hidden"><div class="admin-toolbar"><input id="studentSearch" type="search" placeholder="Search students, IDs, or emails…" /></div><div id="adminStudentTable" class="admin-table-wrap"></div></section>
+    </main>
+  </div>
+  <div id="adminListingDialog" class="dialog-backdrop hidden"><section class="dialog-card admin-listing-dialog"><button id="closeAdminListing" class="admin-dialog-close" type="button" aria-label="Close">×</button><div id="adminListingPreview"></div></section></div>
+  <script src="/js/app.js?v=18.1"></script>
+  <script src="/js/admin.js?v=18.1"></script>
+</body>
+</html>

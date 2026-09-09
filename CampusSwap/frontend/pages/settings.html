@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Settings · CampusSwap</title>
+  <link rel="stylesheet" href="/css/styles.css?v=17.1" />
+</head>
+<body>
+  <main class="shell narrow-shell settings-shell">
+    <a class="back-link" href="/profile">← My profile</a>
+    <header class="compact-heading"><span class="eyebrow">Account</span><h1>Settings.</h1></header>
+    <section class="settings-group">
+      <h2>Notifications</h2>
+      <label class="setting-row"><span><b>New messages</b><small>When another student messages you</small></span><input type="checkbox" checked /></label>
+      <label class="setting-row"><span><b>Request updates</b><small>Accepted, declined and completed swaps</small></span><input type="checkbox" checked /></label>
+    </section>
+    <section class="settings-group">
+      <h2>Privacy & safety</h2>
+      <button id="changePasswordButton" class="setting-row setting-button" type="button"><span><b>Change password</b><small>Use a unique password for CampusSwap</small></span><b>›</b></button>
+      <button id="guidelinesButton" class="setting-row setting-button" type="button"><span><b>Community guidelines</b><small>How to swap safely on campus</small></span><b>›</b></button>
+    </section>
+    <section class="settings-group danger-zone">
+      <h2>Account deletion</h2>
+      <p>Your active listings will be removed, but your history and seller reviews will be preserved if you return.</p>
+      <button id="deleteAccountButton" class="danger-button" type="button">Delete my account</button>
+    </section>
+    <button class="logout-wide" type="button" onclick="CampusSwap.logout()">Log out</button>
+  </main>
+
+  <div id="passwordDialog" class="dialog-backdrop hidden">
+    <form id="passwordForm" class="dialog-card settings-dialog">
+      <div class="dialog-icon">⌁</div><h2>Change password</h2><p class="muted">Enter your current password before choosing a new one.</p>
+      <label>Current password<input name="currentPassword" type="password" autocomplete="current-password" required /></label>
+      <label>New password<input name="newPassword" type="password" minlength="8" autocomplete="new-password" required /><small>Use at least 8 characters.</small></label>
+      <label>Confirm new password<input name="confirmPassword" type="password" minlength="8" autocomplete="new-password" required /></label>
+      <div class="actions"><button id="cancelPassword" class="secondary" type="button">Cancel</button><button class="primary" type="submit">Change password</button></div>
+    </form>
+  </div>
+
+  <div id="guidelinesDialog" class="dialog-backdrop hidden">
+    <section class="dialog-card guidelines-dialog" role="dialog" aria-modal="true" aria-labelledby="guidelinesTitle">
+      <div class="dialog-icon">✓</div><h2 id="guidelinesTitle">Community guidelines</h2><p class="muted">Keep every CampusSwap exchange safe, honest, and respectful.</p>
+      <div class="guideline-list">
+        <article><span>1</span><div><b>Describe items honestly</b><p>Use your own photos and clearly mention damage, defects, or missing parts.</p></div></article>
+        <article><span>2</span><div><b>Meet safely on campus</b><p>Choose a public, well-lit campus area and tell a friend where you are going.</p></div></article>
+        <article><span>3</span><div><b>Inspect before completing</b><p>Check the item carefully before paying and marking it as collected.</p></div></article>
+        <article><span>4</span><div><b>Protect personal information</b><p>Never share passwords, verification codes, or unnecessary banking information.</p></div></article>
+        <article><span>5</span><div><b>Be respectful</b><p>No harassment, scams, prohibited items, spam, or pressure to complete a swap.</p></div></article>
+        <article><span>6</span><div><b>Report suspicious listings</b><p>Use the report option when a listing or student behaviour feels unsafe.</p></div></article>
+      </div>
+      <button id="closeGuidelines" class="primary guideline-close" type="button">I understand</button>
+    </section>
+  </div>
+
+  <div id="deleteAccountDialog" class="dialog-backdrop hidden">
+    <form id="deleteAccountForm" class="dialog-card settings-dialog delete-account-dialog">
+      <div class="dialog-icon danger-icon">!</div><h2>Delete your account?</h2>
+      <p class="muted">Your profile will disappear and you will be logged out. Your completed history and seller reviews will remain archived so they can be restored if you register again.</p>
+      <div class="deletion-summary"><p>Active listings will be removed from Market.</p><p>Pending requests will be cancelled.</p><p>Register with the same Student ID and email to return.</p></div>
+      <label>Confirm your password<input name="password" type="password" autocomplete="current-password" required /></label>
+      <label class="delete-confirmation">Type <b>DELETE</b> to confirm<input name="confirmation" autocomplete="off" required /></label>
+      <div class="actions"><button id="cancelDeleteAccount" class="secondary" type="button">Keep account</button><button class="danger-button" type="submit">Delete account</button></div>
+    </form>
+  </div>
+
+  <script src="/js/app.js?v=17.1"></script>
+  <script src="/js/settings.js?v=17.1"></script>
+</body>
+</html>

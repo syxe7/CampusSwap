@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login · CampusSwap</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main class="auth-layout">
+      <section class="auth-art">
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/assets/campusswap-logo.png" alt="" />
+          <span>CampusSwap</span>
+        </a>
+        <div>
+          <span class="tag">For students, by students</span>
+          <h1>Good finds.<br /><em>Better campus.</em></h1>
+          <p>
+            A safer place to buy, sell, and give pre-loved items a second life
+            within your university community.
+          </p>
+        </div>
+        <div class="art-items">📚 🧮 🪴</div>
+      </section>
+      <section class="auth-side">
+        <form id="loginForm" class="auth-card">
+          <span class="tag">Welcome back</span>
+          <h2>Log in to CampusSwap</h2>
+          <p class="muted">Use your verified university account.</p>
+          <div id="feedback" class="feedback hidden"></div>
+          <div class="form">
+            <label
+              >University email<input
+                name="email"
+                type="email"
+                placeholder="2250001@alfateh.upnm.edu.my"
+                required
+                autocomplete="email" /></label
+            ><label
+              >Password<input
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                required
+                autocomplete="current-password" /></label
+            ><button class="primary">Log in →</button>
+          </div>
+          <p class="auth-switch">
+            New to CampusSwap? <a href="/register">Create an account</a>
+          </p>
+        </form>
+      </section>
+    </main>
+    <script src="/js/app.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>

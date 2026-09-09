@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Register · CampusSwap</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main class="auth-layout">
+      <section class="auth-art">
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/assets/campusswap-logo.png" alt="" />
+          <span>CampusSwap</span>
+        </a>
+        <div>
+          <span class="tag">Verified community</span>
+          <h1>Join your<br /><em>campus circle.</em></h1>
+          <p>
+            University email verification keeps the marketplace familiar,
+            accountable, and student-only.
+          </p>
+        </div>
+        <div class="art-items">♻ 🤝 🎓</div>
+      </section>
+      <section class="auth-side">
+        <form id="registerForm" class="auth-card">
+          <span class="tag">Student registration</span>
+          <h2>Create your account</h2>
+          <div id="feedback" class="feedback hidden"></div>
+          <div class="form">
+            <label
+              >Full name<input
+                name="name"
+                required
+                autocomplete="name" /></label
+            ><label
+              >University email<input
+                name="email"
+                type="email"
+                placeholder="2250001@alfateh.upnm.edu.my"
+                required
+              /><small>Your email must begin with your Student ID.</small></label
+            ><label
+              >Student ID<input
+                name="studentId"
+                placeholder="e.g. 2250001"
+                autocomplete="off"
+                required
+              /><small>Use the ID printed on your student card.</small></label
+            ><label
+              >Password<input
+                name="password"
+                type="password"
+                minlength="8"
+                required
+              /><small>Use at least 8 characters.</small></label
+            ><button class="primary">Create account →</button>
+          </div>
+          <p class="auth-switch">
+            Already registered? <a href="/login">Log in</a>
+          </p>
+        </form>
+      </section>
+    </main>
+    <script src="/js/app.js?v=17.1"></script>
+    <script src="/js/register.js?v=17.1"></script>
+  </body>
+</html>

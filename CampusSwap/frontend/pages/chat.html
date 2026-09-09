@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat · CampusSwap</title>
+    <link rel="stylesheet" href="/css/styles.css?v=16" />
+  </head>
+  <body>
+    <main class="shell chat-shell">
+      <section class="inbox-card">
+        <header class="inbox-heading"><div><p class="eyebrow">MESSAGES</p><h1>Chats</h1></div><span id="totalUnread" class="unread-total hidden">0</span></header>
+        <div id="conversationList" class="conversation-list" aria-label="Your conversations"></div>
+      </section>
+      <section id="chatCard" class="chat-card">
+        <header class="chat-header">
+          <button id="backToInbox" class="chat-back" type="button" aria-label="Back to conversations">←</button>
+          <div class="chat-avatar" id="sellerInitials">AS</div>
+          <div>
+            <h1><a id="sellerProfileLink" class="chat-profile-link" href="/profile"><span id="sellerName">Seller</span></a></h1>
+            <p><span id="itemName">CampusSwap conversation</span> <strong id="chatStatus" class="completed-label hidden">Completed</strong></p>
+          </div>
+        </header>
+        <div id="messageList" class="message-list" aria-live="polite"><div class="chat-empty"><span>💬</span><p>Choose a conversation to start chatting.</p></div></div>
+        <form id="messageForm" class="message-form">
+          <label class="sr-only" for="messageInput">Message</label>
+          <input id="messageInput" maxlength="300" placeholder="Type a message…" required />
+          <button class="primary" type="submit">Send</button>
+        </form>
+        <p class="safety-note">Meet in a public campus location and do not share banking passwords.</p>
+      </section>
+    </main>
+    <script src="/js/app.js?v=16"></script>
+    <script src="/js/chat.js?v=16"></script>
+  </body>
+</html>

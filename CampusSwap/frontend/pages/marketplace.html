@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#173c2e" />
+  <title>Marketplace · CampusSwap</title>
+  <link rel="stylesheet" href="/css/styles.css?v=23" />
+</head>
+<body>
+  <main class="shell market-shell">
+    <section class="market-hero">
+      <div>
+        <span class="eyebrow">Student marketplace</span>
+        <h1>Find something<br />worth keeping.</h1>
+        <p id="count" class="muted">Loading campus finds…</p>
+      </div>
+      <!-- Ora: CampusSwap assistant -->
+      <div class="ora-wrapper" id="oraWrapper">
+        <div class="ora-bubble" id="oraBubble">
+          <button
+            class="ora-close"
+            id="oraClose"
+            type="button"
+            aria-label="Minimise Ora"
+          >×</button>
+
+          <p class="ora-greeting">
+            Hi, <strong id="oraName">Student</strong>! 👋
+          </p>
+          <h3 id="oraPrompt">What are we looking for?</h3>
+
+          <div class="ora-voice-only">
+            <button
+              class="ora-mic ora-mic-large"
+              id="oraMicButton"
+              type="button"
+              aria-label="Ask Ora using your voice"
+              aria-pressed="false"
+              title="Talk to Ora"
+            >
+              <span class="ora-mic-icon" aria-hidden="true">🎤</span>
+              <span class="ora-mic-label">Talk to Ora</span>
+            </button>
+
+            <div class="ora-voice-status" id="oraVoiceStatus" aria-live="polite">
+              Tap the mic and tell Ora what you’re looking for.
+            </div>
+          </div>
+
+          <div class="ora-options">
+            <button type="button" data-ora-action="class">📚 Something for class</button>
+            <button type="button" data-ora-action="room">🏠 Something for my room</button>
+            <button type="button" data-ora-action="cheap">💸 Something cheap</button>
+            <button type="button" data-ora-action="surprise">✨ Surprise me</button>
+          </div>
+        </div>
+
+        <button
+          class="ora-mascot"
+          id="oraMascot"
+          type="button"
+          aria-label="Open Ora assistant"
+        >
+          <span class="ora-leaf" aria-hidden="true">🌱</span>
+          <span class="ora-head" aria-hidden="true">
+            <span class="ora-eye"></span>
+            <span class="ora-eye"></span>
+          </span>
+          <span class="ora-body" aria-hidden="true">♻</span>
+          <span class="ora-arm ora-arm-left" aria-hidden="true"></span>
+          <span class="ora-arm ora-arm-right" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="search-panel" aria-label="Marketplace filters">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="search" placeholder="Search campus finds" aria-label="Search listings" />
+      </label>
+      <input id="filterControl" class="filter-control" type="checkbox" />
+      <label class="filter-toggle" for="filterControl">
+        Filters <span aria-hidden="true">⌄</span>
+      </label>
+      <div id="filterOptions" class="filter-options">
+        <select id="condition" aria-label="Condition">
+          <option>Any condition</option><option>Like new</option><option>Good</option><option>Fair</option>
+        </select>
+        <select id="sort" aria-label="Sort order">
+          <option>Newest</option><option>Price: low to high</option><option>Price: high to low</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="chips" id="chips" aria-label="Categories"></div>
+    <section class="listing-grid" id="listingGrid" aria-live="polite"></section>
+  </main>
+  <script src="/js/app.js?v=18"></script>
+  <script>CampusSwap.pageShell("marketplace");</script>
+  <script src="/js/marketplace.js?v=23"></script>
+</body>
+</html>

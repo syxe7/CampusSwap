@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History · CampusSwap</title>
+  <link rel="stylesheet" href="/css/styles.css?v=15.2" />
+</head>
+<body>
+  <main class="shell narrow-shell">
+    <header class="compact-heading"><span class="eyebrow">Your circular impact</span><h1>Swap history.</h1><p class="muted">Collected items and completed exchanges live here.</p></header>
+    <section id="historyList" class="request-list" aria-live="polite"></section>
+  </main>
+
+  <div id="reviewDialog" class="dialog-backdrop hidden">
+    <form id="reviewForm" class="dialog-card review-dialog">
+      <div class="dialog-icon">★</div>
+      <h2>Leave a review</h2>
+      <p id="reviewPartner" class="muted">How was your exchange?</p>
+      <fieldset class="rating-field">
+        <legend>Rating</legend>
+        <div class="star-options">
+          <input id="star5" type="radio" name="rating" value="5" required /><label for="star5" title="5 stars">★</label>
+          <input id="star4" type="radio" name="rating" value="4" /><label for="star4" title="4 stars">★</label>
+          <input id="star3" type="radio" name="rating" value="3" /><label for="star3" title="3 stars">★</label>
+          <input id="star2" type="radio" name="rating" value="2" /><label for="star2" title="2 stars">★</label>
+          <input id="star1" type="radio" name="rating" value="1" /><label for="star1" title="1 star">★</label>
+        </div>
+      </fieldset>
+      <label class="review-comment">Short comment <small>(optional)</small><textarea name="comment" maxlength="250" placeholder="Friendly, punctual, item as described…"></textarea></label>
+      <div class="actions"><button id="cancelReview" class="secondary" type="button">Not now</button><button class="primary" type="submit">Submit review</button></div>
+    </form>
+  </div>
+
+  <script src="/js/app.js?v=15.2"></script>
+  <script src="/js/history.js?v=15.2"></script>
+</body>
+</html>

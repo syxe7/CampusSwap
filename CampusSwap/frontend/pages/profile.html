@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile · CampusSwap</title>
+  <link rel="stylesheet" href="/css/styles.css?v=16" />
+</head>
+<body>
+  <main class="shell narrow-shell profile-shell">
+    <section class="profile-card">
+      <div id="profileAvatar" class="large-avatar"><span>CS</span></div>
+      <div class="profile-identity">
+        <span class="verified">✓ Verified student</span>
+        <h1 id="profileName">Student</h1>
+        <p id="profileEmail"></p>
+        <span id="studentId" class="student-id"></span>
+      </div>
+      <button id="editProfileButton" class="profile-edit hidden" type="button">Edit</button>
+    </section>
+
+    <section class="profile-stats" aria-label="Seller statistics">
+      <article><strong id="rating">New</strong><span>Seller rating</span></article>
+      <article><strong id="reviews">0</strong><span>Seller reviews</span></article>
+      <article><strong id="swaps">0</strong><span>Completed swaps</span></article>
+    </section>
+
+    <section class="profile-section">
+      <div class="section-heading"><div><span id="profileEyebrow" class="eyebrow">Seller profile</span><h2>What buyers are saying</h2></div></div>
+      <div id="publicReviews" class="public-review-list"></div>
+    </section>
+
+    <section id="ownerActivity" class="profile-section compact-profile-section">
+      <div class="section-heading"><div><span class="eyebrow">Your activity</span><h2>CampusSwap at a glance</h2></div></div>
+      <a class="profile-action" href="/marketplace"><span>◎</span><div><b>Browse marketplace</b><small>Find useful items around campus</small></div><b>›</b></a>
+      <a class="profile-action" href="/history"><span>↺</span><div><b>Completed swaps</b><small id="impactText">No completed swaps yet</small></div><b>›</b></a>
+      <a class="profile-action" href="/settings"><span>⚙</span><div><b>Settings</b><small>Password, notifications and privacy</small></div><b>›</b></a>
+    </section>
+  </main>
+
+  <div id="profileEditDialog" class="dialog-backdrop hidden">
+    <form id="profileEditForm" class="dialog-card profile-edit-dialog">
+      <div class="dialog-icon">✎</div>
+      <h2>Edit profile</h2>
+      <p class="muted">Update the details students see on your seller profile.</p>
+      <div class="profile-photo-editor">
+        <div id="editAvatarPreview" class="edit-avatar-preview"><span>CS</span></div>
+        <label class="secondary photo-picker">Choose picture<input id="profilePhoto" type="file" accept="image/jpeg,image/png,image/webp" /></label>
+        <small>JPG, PNG or WebP · maximum 2 MB</small>
+      </div>
+      <label class="edit-profile-field">Display name<input id="editName" maxlength="60" minlength="2" required /></label>
+      <div class="actions"><button id="cancelProfileEdit" class="secondary" type="button">Cancel</button><button class="primary" type="submit">Save changes</button></div>
+    </form>
+  </div>
+
+  <script src="/js/app.js?v=16"></script>
+  <script src="/js/profile.js?v=16"></script>
+</body>
+</html>
